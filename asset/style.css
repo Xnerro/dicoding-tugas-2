@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inconsolata', monospace;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    background-color: #319795;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    row-gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 1.5rem;
+}
+
+.read {
+    flex-grow: 1;
+    height: 100%;
+    text-align: center;
+    padding: .8rem;
+}
+
+.unread {
+    flex-grow: 1;
+    height: 100%;
+    text-align: center;
+    padding: .8rem;
+}
+
+.tambah {
+    position: absolute;
+    bottom: 5%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    border-radius: 10px;
+    background-color: #4fd1c5;
+    border: none;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tambah:hover {
+    background-color: #319795;
+}
+
+.tambah:active {
+    background-color: #4fd1c5;
+
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.p-5 {
+    padding: 1.3rem;
+}
+
+table {
+    width: 600px;
+    border-collapse: collapse;
+}
+
+td {
+    padding-top: 1rem;
+}
+
+thead {
+    background-color: #4fd1c5;
+    height: 30px;
+    font-size: medium;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+    width: 40%;
+    height: 60%;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.modal-body form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #7979793e;
+}
+
+.close-button:hover {
+    background-color: #79797993;
+}
+
+.form-control {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: large;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: .5rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #a2a2a2;
+    font-size: large;
+    font-weight: 400;
+}
+
+input[type='text']:focus {
+    outline: 2px solid #8c8c8c;
+}
+
+.toast {
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    padding: 1.5rem;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-weight: bold;
+
+    visibility: hidden;
+}
+
+.success {
+    background-color: rgb(128, 240, 189);
+}
+
+.success .progress {
+    background-color: #319795;
+}
+
+.delete {
+    background-color: rgb(248, 108, 108);
+}
+
+.delete .progress {
+    background-color: #d71002;
+}
+
+.progress {
+    height: 3px;
+    position: absolute;
+    bottom: 1%;
+    left: 0%;
+    border-radius: 0 0 5px 5px;
+}
+
+.animate {
+    animation: progress 4.5s ease-in;
+}
+
+.animate-2 {
+    animation: toast 4.5s;
+}
+
+@keyframes toast {
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes progress {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
